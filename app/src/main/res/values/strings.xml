@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Student Reg</string>
+    <string name="lb_update">Update</string>
+    <string name="lb_create">Create</string>
 </resources>

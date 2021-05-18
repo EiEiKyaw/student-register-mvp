@@ -5,10 +5,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_student.*
 import me.kaungmyatmin.studentreg.*
 import me.kaungmyatmin.studentreg.data.AppDatabase
 import me.kaungmyatmin.studentreg.presenter.MainPresenter
@@ -19,8 +21,7 @@ class MainActivity : AppCompatActivity(),
 
     companion object {
         fun newIntent(context: Context): Intent {
-            val intent = Intent(context, MainActivity::class.java)
-            return intent
+            return Intent(context, MainActivity::class.java)
         }
     }
 
@@ -45,8 +46,6 @@ class MainActivity : AppCompatActivity(),
         rvStudent.adapter = studentAdapter
         rvStudent.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         mainPresenter.findAll()
-//        val students = studentDao.findAll()
-//        studentAdapter.setNewData(students)
 
         btnAdd.setOnClickListener {
             val intent =

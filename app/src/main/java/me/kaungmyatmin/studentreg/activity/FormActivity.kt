@@ -1,12 +1,15 @@
 package me.kaungmyatmin.studentreg.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_form.*
+import kotlinx.android.synthetic.main.item_student.*
 import me.kaungmyatmin.studentreg.*
 import me.kaungmyatmin.studentreg.data.AppDatabase
 import me.kaungmyatmin.studentreg.presenter.FormPresenter
@@ -118,15 +121,21 @@ class FormActivity : AppCompatActivity(),
         Snackbar.make(btnOk, message, Snackbar.LENGTH_LONG).show()
     }
 
-
     private fun populateUi(student: Student?) {
+        Log.d(
+            "check",
+            ">>>>> name = ${student?.name} > father name = ${student?.fatherName} > age = ${student?.age.toString()} > phone = ${student?.phone}"
+        )
         if (student != null) {
             title = "Update"
-
-            btnOk.text = "Update"
+            etName.setText(student.name)
+            etFatherName.setText(student.fatherName)
+            etAge.setText(student.age.toString())
+            etPhone.setText(student.phone)
+            btnOk.text = getString(R.string.lb_update)
         } else {
             title = "Create"
-            btnOk.text = "Create"
+            btnOk.text = getString(R.string.lb_create)
         }
     }
 
