@@ -118,14 +118,10 @@ class FormActivity : AppCompatActivity(),
 
 
     private fun notifyUser(message: String) {
-        Snackbar.make(btnOk, message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(btnOk, message, Snackbar.LENGTH_SHORT).show()
     }
 
     private fun populateUi(student: Student?) {
-        Log.d(
-            "check",
-            ">>>>> name = ${student?.name} > father name = ${student?.fatherName} > age = ${student?.age.toString()} > phone = ${student?.phone}"
-        )
         if (student != null) {
             title = "Update"
             etName.setText(student.name)

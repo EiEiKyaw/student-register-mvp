@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity(),
     }
 
     private fun notifyUser(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {
