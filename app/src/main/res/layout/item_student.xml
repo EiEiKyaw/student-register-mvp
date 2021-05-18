@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvName"
+            tools:src="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tvAge"
+            app:layout_constraintEnd_toStartOf="@id/ivProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            tools:text="KaungMyat Min" />
+
+        <TextView
+            android:id="@+id/lblAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age :"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvAge" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/tvFatherName"
+            app:layout_constraintEnd_toEndOf="@id/tvName"
+            app:layout_constraintStart_toEndOf="@id/barrierLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/lblFatherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Father Name :"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvFatherName" />
+
+        <TextView
+            android:id="@+id/tvFatherName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/tvPhone"
+            app:layout_constraintEnd_toEndOf="@id/tvName"
+            app:layout_constraintStart_toEndOf="@id/barrierLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvAge"
+            tools:text="U Tint" />
+
+        <TextView
+            android:id="@+id/lblPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone :"
+            app:layout_constraintStart_toStartOf="@id/tvName"
+            app:layout_constraintTop_toTopOf="@+id/tvPhone" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tvName"
+            app:layout_constraintStart_toEndOf="@id/barrierLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvFatherName"
+            tools:text="09123456" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            app:icon="@drawable/ic_delete"
+            android:textColor="#EC4040"
+            app:iconTint="#EC4040"
+            app:layout_constraintEnd_toStartOf="@+id/btnEdit"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile"
+            app:layout_constraintTop_toTopOf="@id/barrierButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEdit"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            app:icon="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnDelete" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="lblPhone,lblFatherName,lblAge" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvPhone,ivProfile"
+            tools:layout_editor_absoluteY="161dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
