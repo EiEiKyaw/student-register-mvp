@@ -6,7 +6,7 @@ import androidx.room.*
 interface StudentDao {
 
     @Insert
-    suspend fun insert(data: Student): Long
+    fun insert(data: Student): Long
 
     @Query("SELECT * FROM Student")
     fun findAll(): List<Student>

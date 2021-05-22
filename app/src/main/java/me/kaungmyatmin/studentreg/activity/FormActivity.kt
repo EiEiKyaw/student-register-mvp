@@ -128,10 +128,10 @@ class FormActivity : AppCompatActivity(),
             etFatherName.setText(student.fatherName)
             etAge.setText(student.age.toString())
             etPhone.setText(student.phone)
-            btnOk.text = getString(R.string.lb_update)
+            btnOk.text = title
         } else {
             title = "Create"
-            btnOk.text = getString(R.string.lb_create)
+            btnOk.text = title
         }
     }
 
