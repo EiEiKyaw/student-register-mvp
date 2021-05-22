@@ -15,6 +15,10 @@ class StudentAdapter(
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun populateUi(data: Student) {
 
+            itemView.tvName.text = data.name
+            itemView.tvFatherName.text = data.fatherName
+            itemView.tvAge.text = data.age.toString()
+            itemView.tvPhone.text = data.phone
 
             itemView.btnEdit.setOnClickListener {
                 listener.onEditClicked(data)
